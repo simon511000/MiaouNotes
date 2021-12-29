@@ -2,6 +2,11 @@
     "name": "MiaouNotes",
     "description": "Ajoute de nouvelles fonctionnalités à l'intranet de l'URCA",
     "version": "2.0",
+    "icons": {
+        "16": "icons/urca_16.jpg",
+        "48": "icons/urca_48.jpg",
+        "128": "icons/urca_128.jpg"
+    },
     "manifest_version": 3,
     "permissions": ["storage"],
     "content_scripts": [{
