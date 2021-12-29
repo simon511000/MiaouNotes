@@ -1,0 +1,12 @@
+{
+    "name": "MiaouNotes",
+    "description": "Ajoute de nouvelles fonctionnalités à l'intranet de l'URCA",
+    "version": "2.0",
+    "manifest_version": 3,
+    "permissions": ["storage"],
+    "content_scripts": [{
+        "matches": ["https://iut-rcc-intranet.univ-reims.fr/fr/tableau-de-bord"],
+        "css": ["dist/css/styles.css"],
+        "js": ["dist/js/bundle.js"]
+    }]
+  }
