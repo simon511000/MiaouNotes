@@ -6,7 +6,7 @@ export function recupererToutesLesNotesTriees(tableauHtml: HTMLTableElement) : N
 
     const lignes = tbody.querySelectorAll('tr')
     lignes.forEach(ligne => {
-        let buttonUrl = ligne.querySelector('td:nth-child(7) > button').getAttribute('data-url').split('/')
+        let buttonUrl = ligne.querySelector('td:nth-child(7) > button').getAttribute('data-modal-modal-url-value').split('/')
         let noteId = parseInt(buttonUrl[buttonUrl.length-1])
         let noteMatiere = ligne.querySelector("td:nth-child(1)").textContent
         let noteEvaluation = ligne.querySelector("td:nth-child(2)").textContent
@@ -233,11 +233,12 @@ export function creerLigne(note: Note, estUneMoyenne: boolean, nouveau = false):
     if(!estUneMoyenne) {
         let buttonInformation = document.createElement('button')
         buttonInformation.classList.add('btn', 'btn-info', 'btn-outline', 'btn-square', 'btn-xs')
-        buttonInformation.setAttribute('data-provide', 'modaler')
+        buttonInformation.setAttribute('data-controller', 'modal')
+        buttonInformation.setAttribute('data-modal-modal-title-value', 'Détails d\'une note')
+        buttonInformation.setAttribute('data-modal-modal-url-value', '/fr/application/etudiant/note/details/' + note.id)
+        buttonInformation.setAttribute('data-action', 'click->modal#openModal')
         buttonInformation.setAttribute('data-bs-toggle', 'tooltip')
         buttonInformation.setAttribute('data-bs-placement', 'bottom')
-        buttonInformation.setAttribute('data-url', '/fr/application/etudiant/note/details/' + note.id)
-        buttonInformation.setAttribute('data-title', 'Détails d\'une note')
         buttonInformation.setAttribute('data-bs-original-title', 'Détails')
         let iButtonInformation = document.createElement('i')
         iButtonInformation.classList.add('fas', 'fa-info')
