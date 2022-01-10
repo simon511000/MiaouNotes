@@ -1,7 +1,8 @@
 import { recupererToutesLesNotesTriees, ajouterBoutonSauvegarde, recreerTableau } from "./helpers";
+import * as browser from 'webextension-polyfill';
 
 // Récupération des notes connues
-chrome.storage.sync.get(['notesAlreadyKnow'], function(result) {
+browser.storage.sync.get('notesAlreadyKnow').then((result) => {
     const notesConnues: number[] = result.notesAlreadyKnow || []
 
     const tableau: HTMLTableElement = document.querySelector("#mainContent > div.row > div:nth-child(5) > div > div > table")
@@ -21,10 +22,9 @@ chrome.storage.sync.get(['notesAlreadyKnow'], function(result) {
             ids.push(note.id)
         })
 
-        chrome.storage.sync.set({notesAlreadyKnow: ids}, function() {
+        browser.storage.sync.set({notesAlreadyKnow: ids}).then(() => {
             console.log('rechargement de la page')
             location.reload()
-        });
+        })
     })
-
-});
+})

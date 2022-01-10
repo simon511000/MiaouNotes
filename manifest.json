@@ -7,11 +7,17 @@
         "48": "icons/urca_48.jpg",
         "128": "icons/urca_128.jpg"
     },
-    "manifest_version": 3,
+    "manifest_version": 2,
     "permissions": ["storage"],
     "content_scripts": [{
         "matches": ["https://iut-rcc-intranet.univ-reims.fr/fr/tableau-de-bord"],
         "css": ["dist/css/styles.css"],
         "js": ["dist/js/bundle.js"]
-    }]
+    }],
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "miaounotes@simon511000.fr",
+          "strict_min_version": "45.0"
+        }
+    }      
   }
