@@ -12,8 +12,9 @@ export function recupererToutesLesNotesTriees(tableauHtml: HTMLTableElement) : N
         let noteEvaluation = ligne.querySelector("td:nth-child(2)").textContent
         let noteDate = ligne.querySelector("td:nth-child(3)").textContent
         let noteCommentaire = ligne.querySelector("td:nth-child(4)").textContent
-        let noteNote = parseFloat(ligne.querySelector('td:nth-child(5)').textContent)
-        let noteCoefficient = parseFloat(ligne.querySelector('td:nth-child(6)').textContent)
+        let noteNote = Number(ligne.querySelector('td:nth-child(5)').textContent)
+        noteNote = isNaN(noteNote) ? -1 : noteNote
+        let noteCoefficient = Number(ligne.querySelector('td:nth-child(6)').textContent)
 
         let note: Note = {
             id: noteId,
@@ -208,20 +209,22 @@ export function creerLigne(note: Note, estUneMoyenne: boolean, nouveau = false):
     tr.appendChild(tdCommentaire)
 
     let tdNote = document.createElement('td')
+    let span = document.createElement('span')
     if(note.note >= 10) {
-        tdNote.textContent = note.note.toPrecision(4).toString()
+        span.classList.add('badge', 'bg-success')
+        span.textContent = note.note.toPrecision(4).toString()
     } else if(note.note == -1) {
-        tdNote.textContent = ''
+        span.classList.add('badge', 'bg-warning')
+        span.textContent = 'Pas de note ou pas de saisie ?'
     } else {
-        let span = document.createElement('span')
         span.classList.add('badge', 'bg-warning')
         if(note.note < 0) {
             span.textContent = note.note.toString()
         } else {
             span.textContent = note.note.toPrecision(4).toString()
         }
-        tdNote.appendChild(span)
     }
+    tdNote.appendChild(span)
     tr.appendChild(tdNote)
 
     let tdCoefficient = document.createElement('td')
