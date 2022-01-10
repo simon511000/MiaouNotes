@@ -1,7 +1,7 @@
 {
     "name": "MiaouNotes",
     "description": "Ajoute de nouvelles fonctionnalités à l'intranet de l'URCA",
-    "version": "2.1",
+    "version": "2.1.1",
     "icons": {
         "16": "icons/urca_16.jpg",
         "48": "icons/urca_48.jpg",
@@ -17,7 +17,7 @@
     "browser_specific_settings": {
         "gecko": {
           "id": "miaounotes@simon511000.fr",
-          "strict_min_version": "45.0"
+          "strict_min_version": "48.0"
         }
     }      
   }
