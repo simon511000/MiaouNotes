@@ -12,9 +12,10 @@ export function recupererToutesLesNotesTriees(tableauHtml: HTMLTableElement) : N
         let noteEvaluation = ligne.querySelector("td:nth-child(2)").textContent
         let noteDate = ligne.querySelector("td:nth-child(3)").textContent
         let noteCommentaire = ligne.querySelector("td:nth-child(4)").textContent
-        let noteNote = Number(ligne.querySelector('td:nth-child(5)').textContent)
+        let noteNote = Number(ligne.querySelector('td:nth-child(5) .badge').textContent.replace(',', '.'))
         noteNote = isNaN(noteNote) ? -1 : noteNote
         let noteCoefficient = Number(ligne.querySelector('td:nth-child(6)').textContent)
+
 
         let note: Note = {
             id: noteId,
