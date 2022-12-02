@@ -16,7 +16,9 @@ browser.storage.sync.get('notesAlreadyKnow').then((result) => {
 
     const boutonSauvegarde = ajouterBoutonSauvegarde()
     // Quand le bouton est cliqué, on sauvegarder les notes, puis en recrée le tableau
-    boutonSauvegarde.addEventListener('click', () => {
+    boutonSauvegarde.addEventListener('click', (e) => {
+        e.preventDefault();
+
         let ids: number[] = []
         notes.forEach((note) => {
             ids.push(note.id)

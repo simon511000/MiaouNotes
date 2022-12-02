@@ -113,14 +113,17 @@ export function recreerTableau(notesTriees: Note[], notesConnues: number[]): HTM
 
 export function ajouterBoutonSauvegarde(): HTMLButtonElement {
     let button = document.createElement("button");
-    button.innerHTML = "Sauvegarder les notes connues"
-    button.classList.add('btn', 'btn-sm', 'btn-primary')
-    button.id = "save-notes-btn"
+    button.classList.add('btn', 'btn-sm', 'btn-danger');
 
-    let notesTitle = document.querySelector("#mainContent > div.row > div:nth-child(5) > div > h4")
-    notesTitle.appendChild(button)
+    button.innerHTML = `
+        <i class="fas fa-save"></i>
+        Sauvegarder les notes connus
+    `;
 
-    return button
+    let actions = document.querySelector("#mainContent > div > div:nth-child(5) > div > header > div")
+    actions.prepend(button)
+
+    return button;
 }
 
 export function calculerMoyenne(notes: number[], coefficients: number[]): number {
