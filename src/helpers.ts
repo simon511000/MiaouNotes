@@ -129,10 +129,12 @@ export function ajouterBoutonSauvegarde(): HTMLButtonElement {
 export function calculerMoyenne(notes: number[], coefficients: number[]): number {
     // numérateur : n1*c1 + n2*c2 + n3*c3
     let numerateur = 0
+    let denominateur = 0
     let change = false
     for (let i = 0; i < notes.length; i++) {
         if(notes[i] >= 0){
             numerateur += notes[i] * coefficients[i]
+            denominateur += coefficients[i]
             change = true
         }
     }
@@ -140,9 +142,7 @@ export function calculerMoyenne(notes: number[], coefficients: number[]): number
     // dénominateur : c1 + c2 + c3
     let moyenne = -1
     if(change) {
-        if(numerateur != -1) {
-            let denominateur = coefficients.reduce((partial_sum, a) => partial_sum + a, 0)
-    
+        if(numerateur != -1) {    
             moyenne = numerateur / denominateur
         }
     }
@@ -153,7 +153,7 @@ export function calculerMoyenne(notes: number[], coefficients: number[]): number
 export function calculerMoyenneMatiere(toutesLesNotes: Note[], matiere: String): number {
     let notes: number[] = []
     let coefficients: number[] = []
-
+    
     // récupération des notes et coefficients de toutes les notes de la matière
     toutesLesNotes.forEach((note) => {
         if(note.matiere == matiere){
@@ -163,7 +163,7 @@ export function calculerMoyenneMatiere(toutesLesNotes: Note[], matiere: String):
     })
 
     let moyenne = calculerMoyenne(notes, coefficients)
-
+    
     return moyenne
 }
 

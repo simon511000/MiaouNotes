@@ -1,6 +1,6 @@
 {
   "name": "miaounotes",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "private": true,
   "devDependencies": {
     "@types/webextension-polyfill": "^0.8.2",
