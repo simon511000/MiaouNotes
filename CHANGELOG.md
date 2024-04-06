@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.8](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.7...miaounotes-v2.1.8) (2024-04-06)
+
+
+### Bug Fixes
+
+* remove git -f ([73a7fa1](https://github.com/simon511000/MiaouNotes/commit/73a7fa1694e0f71926d0c994defabbb4d1e1e14b))
+
 ## [2.1.7](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.6...miaounotes-v2.1.7) (2024-04-06)
 
 
