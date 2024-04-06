@@ -24,18 +24,6 @@ jobs:
       - run: npm install
       - run: npm run prod
 
-      - name: push MiaouNotes release
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/simon511000/MiaouNotes.git"
-          git add .
-          git commit -a -m 'chore: ${{ steps.release.outputs.tag_name }} release'
-          git push origin master
-          git tag -a ${{ steps.release.outputs.tag_name }} -m 'chore: ${{ steps.release.outputs.tag_name }} release'
-          git push origin ${{ steps.release.outputs.tag_name }}
-        if: ${{ steps.release.outputs.release_created }}
-
       - uses: vimtor/action-zip@v1.2
         with:
           files: dist/ icons/ manifest.json
