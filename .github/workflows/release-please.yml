@@ -1,0 +1,38 @@
+on:
+   push:
+     branches:
+       - main
+name: release-please
+permissions: {}
+jobs:
+  release-please:
+    permissions:
+      contents: write # to create release commit (google-github-actions/release-please-action)
+      pull-requests: write # to create release PR (google-github-actions/release-please-action)
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 20
+      - run: npm install npm@latest -g
+      - run: npm install
+      - run: npm run compile
+      - name: push MiaouNotes release
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/simon511000/MiaouNotes.git"
+          git checkout -b master
+          git add -f build
+          git commit -a -m 'chore: ${{ steps.release.outputs.tag_name }} release'
+          git push origin master
+          git tag -a ${{ steps.release.outputs.tag_name }} -m 'chore: ${{ steps.release.outputs.tag_name }} release'
+          git push origin ${{ steps.release.outputs.tag_name }}
+        if: ${{ steps.release.outputs.release_created }}
