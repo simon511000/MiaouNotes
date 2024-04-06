@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.9](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.8...miaounotes-v2.1.9) (2024-04-06)
+
+
+### Bug Fixes
+
+* remove junk ([4004848](https://github.com/simon511000/MiaouNotes/commit/40048486da456320fa4159e5ef3f0bf4377570ab))
+
 ## [2.1.8](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.7...miaounotes-v2.1.8) (2024-04-06)
 
 
