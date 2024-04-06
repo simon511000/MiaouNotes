@@ -30,10 +30,10 @@ jobs:
           dest: release.zip
         if: ${{ steps.release.outputs.release_created }}
 
-      - name: Upload to Chrome Web Store
+      - name: Publish to Chrome Web Store
         uses: mobilefirstllc/cws-publish@latest
         with:
-          action: 'upload' 
+          action: 'publish' 
           client_id: ${{ secrets.GOOGLE_CLIENT }}
           client_secret: ${{ secrets.GOOGLE_SECRET }}
           refresh_token: ${{ secrets.GOOGLE_TOKEN }}
