@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.10...miaounotes-v2.2.0) (2024-04-06)
+
+
+### Features
+
+* directely publish instead of upload to chrome web store ([6398ebc](https://github.com/simon511000/MiaouNotes/commit/6398ebc463c10d8d1f89a3c2d56d90a6b2315304))
+
 ## [2.1.10](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.9...miaounotes-v2.1.10) (2024-04-06)
 
 
