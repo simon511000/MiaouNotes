@@ -23,7 +23,7 @@ jobs:
           node-version: 20
       - run: npm install npm@latest -g
       - run: npm install
-      - run: npm run compile
+      - run: npm run prod
       - name: push MiaouNotes release
         run: |
           git config user.name github-actions[bot]
