@@ -23,6 +23,7 @@ jobs:
       - run: npm install npm@latest -g
       - run: npm install
       - run: npm run prod
+
       - name: push MiaouNotes release
         run: |
           git config user.name github-actions[bot]
@@ -34,4 +35,21 @@ jobs:
           git push origin master
           git tag -a ${{ steps.release.outputs.tag_name }} -m 'chore: ${{ steps.release.outputs.tag_name }} release'
           git push origin ${{ steps.release.outputs.tag_name }}
+        if: ${{ steps.release.outputs.release_created }}
+
+      - uses: vimtor/action-zip@v1.2
+        with:
+          files: dist/ icons/ manifest.json
+          dest: release.zip
+        if: ${{ steps.release.outputs.release_created }}
+
+      - name: Upload to Chrome Web Store
+        uses: mobilefirstllc/cws-publish@latest
+        with:
+          action: 'upload' 
+          client_id: ${{ secrets.GOOGLE_CLIENT }}
+          client_secret: ${{ secrets.GOOGLE_SECRET }}
+          refresh_token: ${{ secrets.GOOGLE_TOKEN }}
+          extension_id: ${{ secrets.EXTENSION_ID }}
+          zip_file: 'release.zip'
         if: ${{ steps.release.outputs.release_created }}
