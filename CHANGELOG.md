@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.7](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.6...miaounotes-v2.1.7) (2024-04-06)
+
+
+### Bug Fixes
+
+* remove git checkout ([2d06bbe](https://github.com/simon511000/MiaouNotes/commit/2d06bbed8ecc31f9559f535d8ea234f7506b9771))
+
 ## [2.1.6](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.5...miaounotes-v2.1.6) (2024-04-06)
 
 
