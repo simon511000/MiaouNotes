@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.10](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.9...miaounotes-v2.1.10) (2024-04-06)
+
+
+### Miscellaneous Chores
+
+* release 2.1.10 ([d1b61d6](https://github.com/simon511000/MiaouNotes/commit/d1b61d6a636570ef156295c6b7e6b92d366163ff))
+
 ## [2.1.9](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.8...miaounotes-v2.1.9) (2024-04-06)
 
 
