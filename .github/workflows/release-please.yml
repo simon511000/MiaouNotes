@@ -29,7 +29,6 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/simon511000/MiaouNotes.git"
-          git checkout -b master
           git add -f build
           git commit -a -m 'chore: ${{ steps.release.outputs.tag_name }} release'
           git push origin master
