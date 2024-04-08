@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.2.0...miaounotes-v2.3.0) (2024-04-08)
+
+
+### Features
+
+* promote the new extension ([985beeb](https://github.com/simon511000/MiaouNotes/commit/985beeb35393623eb6873ae953dc7803a71c5abc))
+
 ## [2.2.0](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.1.10...miaounotes-v2.2.0) (2024-04-06)
 
 
