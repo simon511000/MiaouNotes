@@ -1,7 +1,7 @@
 {
     "name": "[OBSOLÈTE] MiaouNotes",
     "description": "Ajoute de nouvelles fonctionnalités à l'intranet de l'URCA",
-    "version": "2.2.0",
+    "version": "2.3.0",
     "icons": {
         "16": "icons/urca_16.jpg",
         "48": "icons/urca_48.jpg",
