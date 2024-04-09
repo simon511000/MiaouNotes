@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.3.0...miaounotes-v2.3.1) (2024-04-09)
+
+
+### Bug Fixes
+
+* remove unused storage permission ([87ddf4f](https://github.com/simon511000/MiaouNotes/commit/87ddf4ff126066f9d89129e6dd4883585b850354))
+
 ## [2.3.0](https://github.com/simon511000/MiaouNotes/compare/miaounotes-v2.2.0...miaounotes-v2.3.0) (2024-04-08)
 
 
