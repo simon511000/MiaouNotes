@@ -8,9 +8,6 @@
         "128": "icons/urca_128.jpg"
     },
     "manifest_version": 2,
-    "permissions": [
-        "storage"
-    ],
     "content_scripts": [
         {
             "matches": [
